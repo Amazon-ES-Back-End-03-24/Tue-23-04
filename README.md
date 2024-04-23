@@ -1,16 +1,6 @@
+# CAPA DE DATOS 
 
-# Tabla Original
-
-| ClienteNombre | LibroID | LibroTitulo | LibroPrecio | FechaVenta |
-|---------------|---------|-------------|-------------|------------|
-| Juan Perez    | 101     | Dune        | 20          | 2022-01-01 |
-| Ana Gómez     | 102     | 1984        | 15          | 2022-01-02 |
-| Juan Perez    | 101     | Dune        | 20          | 2022-01-03 |
-| Sara Lina     | 103     | El Hobbit   | 25          | 2022-01-01 |
-| Ana Gómez     | 102     | 1984        | 15          | 2022-01-02 |
-
-
-## 1NF Se encuentra en la primera forma normal
+## Tabla Original
 
 | ClienteNombre | LibroID | LibroTitulo | LibroPrecio | FechaVenta |
 |---------------|---------|-------------|-------------|------------|
@@ -18,9 +8,19 @@
 | Ana Gómez     | 102     | 1984        | 15          | 2022-01-02 |
 | Juan Perez    | 101     | Dune        | 20          | 2022-01-03 |
 | Sara Lina     | 103     | El Hobbit   | 25          | 2022-01-01 |
+| Ana Gómez     | 102     | 1984        | 15          | 2022-01-02 |
+
+### 1NF Se encuentra en la primera forma normal
+
+| ClienteNombre | LibroID | LibroTitulo | LibroPrecio | FechaVenta |
+|---------------|---------|-------------|-------------|------------|
+| Juan Perez    | 101     | Dune        | 20          | 2022-01-01 |
+| Ana Gómez     | 102     | 1984        | 15          | 2022-01-02 |
+| Juan Perez    | 101     | Dune        | 20          | 2022-01-03 |
+| Sara Lina     | 103     | El Hobbit   | 25          | 2022-01-01 |
 
 
-## 2NF Se encuentra en la segunda forma normal
+### 2NF Se encuentra en la segunda forma normal
 
 | VentaId | ClienteNombre | LibroID | LibroTitulo | LibroPrecio | FechaVenta |
 |---------|---------------|---------|-------------|-------------|------------|
@@ -30,7 +30,7 @@
 | 4       | Sara Lina     | 103     | El Hobbit   | 25          | 2022-01-01 |
 
 
-## 3NF Se encuentra en la tercera forma normal
+### 3NF Se encuentra en la tercera forma normal
 
 | VentaId | ClienteNombre | LibroID | FechaVenta |
 |---------|---------------|---------|------------|
@@ -47,7 +47,7 @@
 | 103     | El Hobbit   | 25          |
 
 
- # DDL 
+## DDL 
 Data Definition Language - comandos definir base de datos
 
 
