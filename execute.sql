@@ -107,6 +107,17 @@ ORDER BY LibroPrecio ASC;
 SELECT DISTINCT ClienteNombre
 FROM Ventas;
 
+-- Add a book that has not been sold (to demonstrate LEFT JOIN and FULL JOIN):
+INSERT INTO Libros (LibroId, LibroTitulo, LibroPrecio)
+VALUES (104, 'Catch-22', 30);
+
+-- This insert is only for demonstration and its BAD PRACTICE, it is just to test the joins
+-- So it doesn't fail we "disable" the foreignKeys (so we can add a Venta with an nonexistent LibroId)
+SET foreign_key_checks = 0;
+INSERT INTO Ventas (VentaId, ClienteNombre, LibroId, FechaVenta)
+VALUES (6, 'Maria Luisa', 105, '2022-01-05');
+SET foreign_key_checks = 1;
+
 -- INNER
 SELECT Ventas.VentaId, Ventas.ClienteNombre, Libros.LibroTitulo, Ventas.FechaVenta
 FROM Ventas
@@ -124,19 +135,6 @@ FROM Ventas
 
 
 -- ------MORE JOIN EXAMPLES------ --
-
--- Add a book that has not been sold (to demonstrate LEFT JOIN and FULL JOIN):
-INSERT INTO Libros (LibroId, LibroTitulo, LibroPrecio)
-VALUES (104, 'Catch-22', 30);
-
--- This insert is only for demonstration and its BAD PRACTICE, it is just to test the joins
--- So it doesn't fail we "disable" the foreignKeys (so we can add a Venta with an nonexistent LibroId)
-SET foreign_key_checks = 0;
-INSERT INTO Ventas (VentaId, ClienteNombre, LibroId, FechaVenta)
-VALUES (6, 'Maria Luisa', 105, '2022-01-05');
-SET foreign_key_checks = 1;
-
-
 -- INNER
 SELECT Libros.LibroTitulo AS Libro, Ventas.VentaId AS Venta
 FROM Libros
